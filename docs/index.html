@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+ 
+</head>
+<body>
+
+  <main id="app">
+    <div class="text">
+      <blockquote>
+        {{ authors[index].text }}
+      </blockquote>
+
+      <div class="text__credentials">
+        <span class="text__author">{{ authors[index].author }}</span>
+        <span class="text__profession">{{ authors[index].profession }}</span>
+
+      </div>
+
+    </div>
+
+    <div class="slider">
+      <img :src="authors[index].img" :alt="authors[index].author">
+
+      <div class="slider__arrows">
+        <img @keyup.left="prev" @click="prev" src="./img/icon-prev.svg" alt="Previous" class="arrow_left">
+        <img @keyup.right="next" @click="next" src="./img/icon-next.svg" alt="Next" class="arrow_right">
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
